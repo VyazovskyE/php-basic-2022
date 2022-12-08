@@ -112,10 +112,11 @@ customDump(sumArray([1, 'a', 'b']));
 # размера можно вписать в квадрат большего размера размер возвращать в float
 function countSquares(int|float $bigSquare, int|float $smallSquare): float
 {
-  if ($bigSquare < $smallSquare || $smallSquare == 0) {
-    return 0;
+  $res = 0;
+  if ($bigSquare >= $smallSquare && $smallSquare !== 0) {
+    $res = $bigSquare / $smallSquare;
   }
-  return floatval($bigSquare / $smallSquare);
+  return floatval($res);
 }
 
 customDump(countSquares(10, 2));
